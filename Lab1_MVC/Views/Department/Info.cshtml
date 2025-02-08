@@ -1,0 +1,16 @@
+﻿@model Department
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.name</td>
+        </tr>
+    </tbody>
+</table>
+<a asp-controller="Department" asp-action="Index" class="btn btn-primary">Back To List</a>

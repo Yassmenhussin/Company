@@ -1,0 +1,31 @@
+﻿<h1>Employee</h1>
+<a class="btn btn-success" asp-action="Create" asp-controller="Employee">Create New Employee</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Department_Id</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Employee emp in Model)
+        {
+            <tr>
+                <td>@emp.id</td>
+                <td>@emp.name</td>
+                <td>@emp.age</td>
+                <td>@emp.salary</td>
+                <td>@emp.Dep_id</td>
+                <td> <a asp-controller="Employee" asp-action="Info" asp-route-Id="@emp.id" class="btn btn-primary"> Details </a> </td>
+                <td> <a asp-controller="Employee" asp-action="Edit" asp-route-Id="@emp.id" class="btn btn-warning"> Edit </a> </td>
+                <td> <a asp-controller="Employee" asp-action="Delete" asp-route-Id="@emp.id" class="btn btn-danger"> Delete </a> </td>
+            </tr>
+        }
+    </tbody>
+</table>

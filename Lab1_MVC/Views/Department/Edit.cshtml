@@ -1,0 +1,13 @@
+﻿@model DepartmentDTO
+<h1> Edit The Department  </h1>
+<form asp-action="Edit" asp-controller="Department" method="post" >
+    <input type="hidden" name="id" value="@ViewBag.id"/>
+    <div class="my-3">
+        <label class="form-label" asp-for="departmentName">  </label>
+        <input class="form-control" asp-for="departmentName" />
+        <span asp-validation-for="departmentName" class="text-danger" ></span>
+    </div>
+    <input type="submit" value="Edit" class="btn btn-success" />
+</form>
+
+<partial name="_ValidationScriptsPartial"/>

@@ -1,0 +1,32 @@
+﻿@model EmployeeDTO
+@{
+    SelectList myList = new SelectList(ViewBag.Departments, "id", "name");
+}
+<h1>Edit The Employee</h1>
+<form asp-action="Edit" asp-controller="Employee" method="post" >
+    <input type="hidden" name="id" value="@ViewBag.id"/>
+    <div class="my-3">
+        <label class="form-label" asp-for="employeeName">  </label>
+        <input class="form-control" asp-for="employeeName" />
+        <span asp-validation-for="employeeName" class="text-danger" ></span>
+    </div>
+    <div class="my-3">
+        <label class="form-label" asp-for="employeeAge">  </label>
+        <input class="form-control" asp-for="employeeAge" />
+        <span asp-validation-for="employeeAge" class="text-danger" ></span>
+    </div>
+    <div class="my-3">
+        <label class="form-label" asp-for="employeeSalary">  </label>
+        <input class="form-control" asp-for="employeeSalary" />
+        <span asp-validation-for="employeeSalary" class="text-danger" ></span>
+    </div>
+    <div class="my-3">
+        <label class="form-label" asp-for="Dep_id">  </label>
+        <select asp-for="Dep_id" asp-items="myList" class="">
+        </select>
+        <span asp-validation-for="Dep_id" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Edit" class="btn btn-success" />
+</form>
+
+<partial name="_ValidationScriptsPartial"/>

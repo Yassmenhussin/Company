@@ -1,0 +1,24 @@
+﻿@model Employee
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Department_Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+                <td>@Model.id</td>
+                <td>@Model.name</td>
+                <td>@Model.age</td>
+                <td>@Model.salary</td>
+                <td>@Model.Dep_id</td>
+        </tr>
+    </tbody>
+</table>
+@*<h1> @Model.department.name</h1>
+*@<a asp-controller="Employee" asp-action="Index" class="btn btn-primary">Back To List</a>
